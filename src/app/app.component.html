@@ -7,8 +7,16 @@
 
 <div id="ip-tracker-container">
   <h1>IP Address Tracker</h1>
-  <form>
-    <input type="text" placeholder="Search for any IP address or domain">
+  <form #ipAddress="ngForm" (ngSubmit)="getInfoFromIp(ipAddress)">
+    <input
+      #ip="ngModel" 
+      type="text"
+      name="ip" 
+      class="form-control"
+      placeholder="Search for any IP address or domain"
+      ngModel
+      required>
+    <button type="submit">></button>
   </form>
   <div id="info">
     <div id="ip-address">
