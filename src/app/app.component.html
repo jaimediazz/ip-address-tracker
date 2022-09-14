@@ -13,19 +13,19 @@
   <div id="info">
     <div id="ip-address">
       <span>IP ADDRESS</span>
-      <p>192.212.174.101</p>
+      <p *ngIf="clientInfo">{{ clientInfo.data.ip }}</p>
     </div>
     <div id="location">
       <span>LOCATION</span>
-      <p>Brooklyn, NY 10001</p>
+      <p *ngIf="clientInfo">{{ clientInfo.data.location.city }}, {{ clientInfo.data.location.region }}, {{ clientInfo.data.location.country }} {{ clientInfo.data.location.postalCode }}</p>
     </div>
     <div id="timezone">
       <span>TIMEZONE</span>
-      <p>UTC -05:00</p>
+      <p *ngIf="clientInfo">UTC {{ clientInfo.data.location.timezone }}</p>
     </div>
     <div id="isp">
       <span>ISP</span>
-      <p>SpaceX Stralink</p>
+      <p *ngIf="clientInfo">{{ clientInfo.data.isp }}</p>
     </div>
   </div>
 </div>

@@ -6,10 +6,11 @@ import axios from 'axios';
 })
 export class GeoApiService {
 
-  prueba() {
+  getClientInfo() {
     console.log("prueba");
-/*     axios.get('https://geo.ipify.org/api/v2/country,city?apiKey=at_84JL1NuHF9CpQSxcG34d2FWlRgyGr').then(res => {
+    return axios.get('https://geo.ipify.org/api/v2/country,city?apiKey=at_84JL1NuHF9CpQSxcG34d2FWlRgyGr').then(res => {
       console.log("respuesta con IP pública del usuario: ", res);
-    }); */
+      return res;
+    });
   }
 }
