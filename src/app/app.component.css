@@ -1,4 +1,31 @@
+h1 {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;
+    color: white;    
+}
 
+span {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    color: hsl(0, 0%, 59%);
+}
+
+p {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 700;
+    color: black;
+}
+
+input {
+    min-width: 300px;
+    padding: .5em 0 .5em 1em;
+    border-radius: 10px;
+}
+
+input::placeholder {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 500;    
+}
 
 #bg-image {
     width: 100%;
@@ -32,7 +59,7 @@
     bottom: 0;
     text-align: center;
     padding-top: 4em;
-    z-index: 1;
+    z-index: 999;
 }
 
 #info {
@@ -41,4 +68,15 @@
     background-color: white;
     width: 70%;
     margin-top: 40px;
+    padding: 2em;
+    border-radius: 10px;
+}
+
+#info div {
+    text-align: left;
+}
+
+#info div:not(:first-child) {
+    padding-left: 5em;
+    border-left: 1px solid hsl(0, 0%, 59%);
 }
