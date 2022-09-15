@@ -86,3 +86,33 @@ button {
     padding-right: 5em;
     border-right: 1px solid hsl(0, 0%, 59%);
 }
+
+/* EVENTS */
+
+button:hover {
+    cursor: pointer;
+    background-color: hsl(0, 0%, 17%);
+    border-color: hsl(0, 0%, 17%);
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 750px) {
+    #info {
+        flex-direction: column;
+        width: 40%;
+    }
+
+    #info div:not(:last-child) {
+        padding-bottom: 1em;
+        padding-right: 0;
+        border-right: 0;
+    }
+    
+    #info div {
+        text-align: center;
+    }
+
+    #map {
+        height: 800px;
+    }
+}
