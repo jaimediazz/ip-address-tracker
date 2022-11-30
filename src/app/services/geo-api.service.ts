@@ -18,9 +18,7 @@ export class GeoApiService {
         return res;
       });
     } else {
-      return axios.get('https://geo.ipify.org/api/v2/country,city?apiKey=at_84JL1NuHF9CpQSxcG34d2FWlRgyGr').then(res => {
-        return res;
-      });      
+      return this.getClientInfo();      
     }
   }
 }
