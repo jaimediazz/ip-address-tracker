@@ -7,6 +7,7 @@
 
 <div id="ip-tracker-container">
   <h1>IP Address Tracker</h1>
+  <p class="error" *ngIf="inputError">Input entered is not an IP address</p>
   <form #ipAddress="ngForm" (ngSubmit)="getInfoFromIp(ipAddress)">
     <input
       #ip="ngModel" 

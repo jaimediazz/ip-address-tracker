@@ -39,6 +39,10 @@ button {
     min-height: 270px;
 }
 
+.error {
+    color: red;
+}
+
 /* LAYOUT */
 
 #app {

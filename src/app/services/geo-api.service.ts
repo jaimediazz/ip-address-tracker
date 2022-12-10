@@ -13,12 +13,8 @@ export class GeoApiService {
   }
 
   getClientInfoByIp(ipAddress: any) {
-    if(ipAddress.valid) {
-      return axios.get('https://geo.ipify.org/api/v2/country,city?apiKey=at_84JL1NuHF9CpQSxcG34d2FWlRgyGr&ipAddress=' + ipAddress.value.ip).then(res => {
-        return res;
-      });
-    } else {
-      return this.getClientInfo();      
-    }
+    return axios.get('https://geo.ipify.org/api/v2/country,city?apiKey=at_84JL1NuHF9CpQSxcG34d2FWlRgyGr&ipAddress=' + ipAddress).then(res => {
+      return res;
+    });
   }
 }

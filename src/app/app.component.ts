@@ -9,13 +9,15 @@ import { GeoApiService } from './services/geo-api.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+  inputError: boolean = false;
   map: any;
   clientInfo: any;
   marker: any;
   customMarker = L.icon({
     iconUrl: '../assets/icon-location.svg',
     iconAnchor: [22, 94]
-  })
+  });
+  regexExp = /^(?!0)(?!.*\.$)((1?\d?\d|25[0-5]|2[0-4]\d)(\.|$)){4}$/;
 
   constructor(private geoApiService: GeoApiService) { }
   
@@ -38,8 +40,15 @@ export class AppComponent implements OnInit {
   }
 
   async getInfoFromIp(ipAddress: any) {
-    this.clientInfo = await this.geoApiService.getClientInfoByIp(ipAddress);
-    this.createMarker(this.clientInfo.data.location.lat, this.clientInfo.data.location.lng);
+    if(ipAddress.valid) {
+      if(this.regexExp.test(ipAddress.value.ip)) {
+        this.inputError = false;
+        this.clientInfo = await this.geoApiService.getClientInfoByIp(ipAddress.value.ip);
+        this.createMarker(this.clientInfo.data.location.lat, this.clientInfo.data.location.lng);
+      } else {
+        this.inputError = true;
+      }
+    } 
   }
 
   createMarker(lat: number, lng: number) {
